@@ -1,58 +1,66 @@
 {
-    "Title": "Campus Life on the West Side",
-    "Credits": "Created by Adam Smith (amsmith@ucsc.edu).",
-    "InitialLocation": "Kresge",
+    "Title": "Abandoned Castle",
+    "Credits": "Created by Akira Shemansky for CMPM 120 using code by Adam Smith (amsmith@ucsc.edu).",
+    "InitialLocation": "Main Hall",
     "Locations": {
-        "Kresge": {
-            "Body": "This is Kresge College, lots of nice trees.",
-            "Choices": [
-                {
-                    "Text": "South",
-                    "Target": "Porter"
-                }
-            ]
-        },
-        "Porter": {
-            "Body": "This is Porter College, the trees are nice here too.",
+        "Main Hall": {
+            "Body": "You're standing in the main hall of an old, abandoned castle. Sunlight is streaming in through holes in the ceiling. There is a staircase to your north, doorways to the east and west, and a large double-door to the south.",
             "Choices": [
                 {
                     "Text": "North",
-                    "Target": "Kresge"
+                    "Target": "Staircase"
+                },
+                {
+                    "Text": "East",
+                    "Target": "East Room"
+                },
+                {
+                    "Text": "West",
+                    "Target": "West Room"
                 },
                 {
                     "Text": "South",
-                    "Target": "Rachel Carson"
+                    "Target": "Exit"
                 }
             ]
         },
-        "Rachel Carson": {
-            "Body": "Rachel Carson College, more sun and fewer trees.",
+        "Staircase": {
+            "Body": "You walk towards the stairs. Fallen pieces of the ceiling and the surrounding collumns have rendred them unusable.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Porter"
+                    "Text": "Back",
+                    "Target": "Main Hall"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Oakes"
+                    "Text": "East",
+                    "Target": "East Room"
+                },
+                {
+                    "Text": "West",
+                    "Target": "West Room"
                 }
             ]
         },
-        "Oakes": {
-            "Body": "Oakes College, even the buildings have tree bark on them.",
+        "East Room": {
+            "Body": "You walk into the room to the east. It's too dark to see anything.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Rachel Carson"
-                },
-                {
-                    "Text": "South",
-                    "Target": "Beyond"
+                    "Text": "Back",
+                    "Target": "Main Hall"
                 }
             ]
         },
-        "Beyond": {
-            "Body": "Grass, don't forget to check for ticks!"
+        "West Room": {
+            "Body": "You walk into the room to the west. Water is pouring in from an adjacent room, creating a pool across the vast, sunken floor. It wouldn't be wise to continue this way.",
+            "Choices": [
+                {
+                    "Text": "Back",
+                    "Target": "Main Hall"
+                }
+            ]
+        },
+        "Exit": {
+            "Body": "You push open the large door. A crack of light down the middle grows larger and larger as you push the two sides apart. Eventually, you're able to go out between them, and you enter a lush green forest, stretching out as far as you can see."
         }
     }
 }
