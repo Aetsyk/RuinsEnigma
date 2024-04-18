@@ -1,66 +1,232 @@
 {
-    "Title": "Abandoned Castle",
+    "Title": "Endless Enigma",
     "Credits": "Created by Akira Shemansky for CMPM 120 using code by Adam Smith (amsmith@ucsc.edu).",
-    "InitialLocation": "Main Hall",
+    "InitialLocation": "Start",
     "Locations": {
+        "Start": {
+            "Body": "You wake up in what looks like the ruins of a castle, a patch of light warming your face. You have no memory of where you are or what has happened, but you can still recall your mission: kill the warlock.",
+            "Choices": [
+                {
+                    "Text": "Get up",
+                    "Target": "Main Hall"
+                }
+            ]
+        },
         "Main Hall": {
-            "Body": "You're standing in the main hall of an old, abandoned castle. Sunlight is streaming in through holes in the ceiling. There is a staircase to your north, doorways to the east and west, and a large double-door to the south.",
+            "Body": "You're standing in the castle's main hall. Sunlight is streaming in through holes in the ceiling. There is a large door to the north and doorways to the east and west. The south has been blocked by debris.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Staircase"
+                    "Text": "Door",
+                    "Target": "Main Door"
                 },
                 {
-                    "Text": "East",
-                    "Target": "East Room"
+                    "Text": "Southeast",
+                    "Target": "Southeast Room",
+                    "Barrier": "Yes"
                 },
                 {
-                    "Text": "West",
-                    "Target": "West Room"
+                    "Text": "Southwest",
+                    "Target": "Southwest Room",
+                    "Rune": "Hexagon"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Exit"
+                    "Text": "Northeast",
+                    "Target": "Northeast Room",
+                    "Barrier": "Yes"
+                },
+                {
+                    "Text": "Northwest",
+                    "Target": "Northwest Room",
+                    "Rune": "Rectangle"
                 }
             ]
         },
-        "Staircase": {
-            "Body": "You walk towards the stairs. Fallen pieces of the ceiling and the surrounding collumns have rendred them unusable.",
+        "Main Door": {
+            "Body": "A pair of grand stone doors stands before you, their frame and faces intricately carved. Three slots are arranged vertically down the middle of the doors: one rectangle, one hexagon, and one diamond. You can't see any other way to open them.",
+            "Choices": [
+                {
+                    "Text": "Back",
+                    "Target": "Main Hall"
+                }
+            ],
+            "LockedChoices": [
+                {
+                    "Text": "Insert the Runes",
+                    "Target": "Insert the Runes",
+                    "Needs": ["Rectangle", "Hexagon", "Diamond"]
+                }
+            ]
+        },
+        "Southeast Room": {
+            "Body": "You walk through the doorway to the southeast. The walls are heavily cracked; they look like they're barely holding the ceiling up. You could possibly destroy them with your sorcery.",
+            "AltBody": "The room is destroyed.",
+            "Choices": [
+                {
+                    "Text": "Back",
+                    "Target": "Main Hall"
+                }
+            ],
+            "BarrierChoices": [
+                {
+                    "Text": "Blast the wall to your left",
+                    "Target": "Blast Left Wall",
+                    "BarrierOut": "Yes"
+                }
+            ]
+        },
+        "Blast Left Wall": {
+            "Body": "You point your open palm at the wall and focus your energy. An explosion of blue flame destabilizes the wall, but the barrier on the other side holds it up just long enough for you to escape. Once you're out of the room, the barrier gives out and the ceiling finally caves in.",
+            "Choices": [
+                {
+                    "Text": "Enter Northeast",
+                    "Target": "Northeast Room",
+                    "Barrier": "Yes"
+                },
+                {
+                    "Text": "Not yet",
+                    "Target": "Main Hall"
+                }
+            ]
+        },
+        "Southwest Room": {
+            "Body": "You walk through the doorway to the southwest. There are several pedestals holding different runes. You're not sure how, but you know only one of them is real. Which do you take?",
+            "Choices": [
+                {
+                    "Text": "None (Back)",
+                    "Target": "Main Hall"
+                },
+                {
+                    "Text": "Rectangle",
+                    "Target": "Southwest Fail"
+                },
+                {
+                    "Text": "Circle",
+                    "Target": "Southwest Fail"
+                },
+                {
+                    "Text": "Octagon",
+                    "Target": "Southwest Fail"
+                },
+                {
+                    "Text": "Diamond",
+                    "Target": "Southwest Fail"
+                },
+                {
+                    "Text": "Hexagon",
+                    "Target": "Take Hexagon Rune",
+                    "Gives": "Hexagon"
+                },
+                {
+                    "Text": "Pentagon",
+                    "Target": "Southwest Fail"
+                },
+                {
+                    "Text": "Trapezoid",
+                    "Target": "Southwest Fail"
+                }
+            ]
+        },
+        "Take Hexagon Rune": {
+            "Body": "You grab the Hexagon rune, and all the others disintegrate.",
+            "Choices": [
+                {
+                    "Text": "Leave",
+                    "Target": "Main Hall"
+                }
+            ]
+        },
+        "Southwest Fail": {
+            "Body": "As you reach out to grab the rune, it dissipates into thin air, and you sink into the ground. You land back in the main hallway. It seems that wasn't the right option.",
+            "Choices": [
+                {
+                    "Text": "...",
+                    "Target": "Main Hall"
+                }
+            ]
+        },
+        "Northeast Room": {
+            "Body": "You walk through the doorway to the northeast. An arcane barrier bisects the room, tethered to the floor, ceiling, and two of the walls. The wall to your right looks damaged, but the barrier still holds.",
+            "AltBody": "You walk through the doorway to the northeast. The barrier has dissipated, allowing you to pass through.",
+            "Choices": [
+                {
+                    "Text": "Back",
+                    "Target": "Main Hall"
+                }
+            ],
+            "LockedChoices": [
+                {
+                    "Text": "Continue",
+                    "Target": "Pool",
+                    "Rune": "Diamond"
+                }
+            ]
+        },
+        "Pool": {
+            "Body": "You walk into a room with a large swimming pool in the center. Infused crystals still light the inside the pool, giving its surface an eerie glow. Chunks of stone float on the water, including the diamond rune.",
             "Choices": [
                 {
                     "Text": "Back",
                     "Target": "Main Hall"
                 },
                 {
-                    "Text": "East",
-                    "Target": "East Room"
+                    "Text": "Take the rune",
+                    "Target": "Take Diamond Rune",
+                    "Gives": "Diamond"
+                }
+            ]
+        },
+        "Take Diamond Rune": {
+            "Body": "You don't know why, but you feel that you shouldn't step into the water. Instead, you use the floating stones as platforms to get to the rune. After you grab it from the water, the surface underneath it appears to bubble. On a closer look, small, clear fish seem to be leaping from the water. They inhabit this pool, and you immediately understand them as dangerous, though you don't know why.",
+            "Choices": [
+                {
+                    "Text": "Leave",
+                    "Target": "Main Hall"
+                }
+            ]
+        },
+        "Northwest Room": {
+            "Body": "You walk through the doorway to the northwest. A rectangular rune sits on a pedestal opposite of the doorway. To your right, the phrase \"THE CLOCKS SPIN BACKWARDS\" is written in blood on the wall. This phrase seems familiar to you.",
+            "Choices": [
+                {
+                    "Text": "Back",
+                    "Target": "Main Hall"
                 },
                 {
-                    "Text": "West",
-                    "Target": "West Room"
+                    "Text": "Take the rune",
+                    "Target": "Take Rectangle Rune",
+                    "Gives": "Rectangle"
                 }
             ]
         },
-        "East Room": {
-            "Body": "You walk into the room to the east. It's too dark to see anything.",
+        "Take Rectangle Rune": {
+            "Body": "You take the Rectangle Rune and turn back. For some reason, this is all strangely familiar, like you've done this before. You can't help but wonder whose blood is on the wall.",
             "Choices": [
                 {
-                    "Text": "Back",
+                    "Text": "Leave",
                     "Target": "Main Hall"
                 }
             ]
         },
-        "West Room": {
-            "Body": "You walk into the room to the west. Water is pouring in from an adjacent room, creating a pool across the vast, sunken floor. It wouldn't be wise to continue this way.",
+        "Insert the Runes": {
+            "Body": "You insert the runes into the slots one by one. After a couple seconds, all three split down the middle, and the grand doors open outward, revealing a spiral staircase leading down. Somehow, you know the warlock is just down those stairs, yet you can't feel excited. It's all too familiar.",
             "Choices": [
                 {
-                    "Text": "Back",
-                    "Target": "Main Hall"
+                    "Text": "Descend",
+                    "Target": "Descend"
                 }
             ]
         },
-        "Exit": {
-            "Body": "You push open the large door. A crack of light down the middle grows larger and larger as you push the two sides apart. Eventually, you're able to go out between them, and you enter a lush green forest, stretching out as far as you can see."
+        "Descend": {
+            "Body": "It's not just a feeling. Walking down the staircase, it's obvious that you've been here before, done this before. You can tell exactly how long you need to keep walking before you reach the doors to the warlock's chamber. It's inevitable. With each step, you try to build up courage, but you can't muster up any feeling. You feel no fear. It just is what it is. You approach the doors to the warlock's chamber.",
+            "Choices": [
+                {
+                    "Text": "Enter",
+                    "Target": "Warlock's Chamber"
+                }
+            ]
+        },
+        "Warlock's Chamber": {
+            "Body": "You push open the doors. "
         }
     }
 }
