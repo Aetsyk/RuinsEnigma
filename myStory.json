@@ -1,5 +1,5 @@
 {
-    "Title": "Endless Enigma",
+    "Title": "Ruin's Enigma",
     "Credits": "Created by Akira Shemansky for CMPM 120 using code by Adam Smith (amsmith@ucsc.edu).",
     "InitialLocation": "Start",
     "Locations": {
@@ -71,8 +71,19 @@
                     "Text": "Blast the wall to your left",
                     "Target": "Blast Left Wall",
                     "BarrierOut": "Yes"
+                },
+                {
+                    "Text": "Blast the wall to your right",
+                    "Target": "Southeast Room Fail"
+                },
+                {
+                    "Text": "Blast the wall in front of you",
+                    "Target": "Southeast Room Fail"
                 }
             ]
+        },
+        "Southeast Room Fail": {
+            "Body": "You point your open palm at the wall and focus your energy. An explosion of blue flame destabilizes the wall, causing it to crumble. Unfortunately, it brings the ceiling down with it, with no time for you to escape."
         },
         "Blast Left Wall": {
             "Body": "You point your open palm at the wall and focus your energy. An explosion of blue flame destabilizes the wall, but the barrier on the other side holds it up just long enough for you to escape. Once you're out of the room, the barrier gives out and the ceiling finally caves in.",
@@ -262,7 +273,7 @@
             ]
         },
         "Warlock's Chamber 5": {
-            "Body": "But where were your memories? Activating a spell like that at your skill level, you may have needed an extra condition to make it work, possibly your own memories. Both you and the Warlock begin to tire, yet your continue fighting. You recall more and more deaths, hundreds, maybe even nearing a thousand. You worry that memories weren't a condition for that spell, that the amount of deaths and returns have begun to affect you.",
+            "Body": "But where were your memories? Activating a spell like that at your skill level, you may have needed an extra condition to make it work, possibly your own memories. Both you and the Warlock begin to tire, yet you continue fighting. You recall more and more deaths, hundreds, maybe even nearing a thousand. You worry that memories weren't a condition for that spell, that the amount of deaths and returns have begun to affect you.",
             "Choices": [
                 {
                     "Text": "...",
@@ -274,22 +285,29 @@
             "Body": "Suddenly, the memories stop. You've surpassed every previous attempt, and now you stand in the present. The Warlock is heavily wounded, and your body burns from exhaustion. You try to think of your next move, but the Warlock has already begun its next attack!",
             "Choices": [
                 {
-                    "Text": "...",
+                    "Text": "Dodge left?",
                     "Target": "Warlock's Chamber 7"
                 },
                 {
-                    "Text": "...",
+                    "Text": "Dodge right?",
                     "Target": "Warlock's Chamber 7"
                 },
                 {
-                    "Text": "...",
+                    "Text": "Rush in?",
                     "Target": "Warlock's Chamber 7"
                 },
                 {
-                    "Text": "...",
+                    "Text": "Step back?",
+                    "Target": "Warlock's Chamber 7"
+                },
+                {
+                    "Text": "Block?",
                     "Target": "Warlock's Chamber 7"
                 }
             ]
+        },
+        "Warlock's Chamber 7": {
+            "Body": "Unfortunately, it's too late. You try to keep yourself from falling to the ground, but your legs are no longer connected to the rest of you. The burning is replaced by a deep coldness. The Warlock stands over you with its long neck hunched over, its solemn eyes finally visible to you. A thick fog begins to eat at your mind as your senses fade. In these moments leading up to your death, all you can think about is having to do this all again."
         }
     }
 }

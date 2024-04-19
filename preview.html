@@ -48,6 +48,12 @@
                 for (let choice of location.Choices || []) {
                     edges.push({ data: { source: key, target: choice.Target, id: key + ": " + choice.Text } });
                 }
+                for (let choice of location.LockedChoices || []) {
+                    edges.push({ data: { source: key, target: choice.Target, id: key + ": [LOCKED] " + choice.Text } });
+                }
+                for (let choice of location.BarrierChoices || []) {
+                    edges.push({ data: { source: key, target: choice.Target, id: key + ": " + choice.Text } });
+                }
             }
 
             let cy = cytoscape({
