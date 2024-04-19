@@ -4,7 +4,7 @@
     "InitialLocation": "Start",
     "Locations": {
         "Start": {
-            "Body": "You wake up in what looks like the ruins of a castle, a patch of light warming your face. You have no memory of where you are or what has happened, but you can still recall your mission: kill the warlock.",
+            "Body": "You wake up in what looks like the ruins of a castle, a patch of light warming your face. You have no memory of where you are or what has happened, but you can still recall your mission: kill the Warlock.",
             "Choices": [
                 {
                     "Text": "Get up",
@@ -217,7 +217,7 @@
             ]
         },
         "Descend": {
-            "Body": "It's not just a feeling. Walking down the staircase, it's obvious that you've been here before, done this before. You can tell exactly how long you need to keep walking before you reach the doors to the warlock's chamber. It's inevitable. With each step, you try to build up courage, but you can't muster up any feeling. You feel no fear. It just is what it is. You approach the doors to the warlock's chamber.",
+            "Body": "It's not just a feeling. Walking down the staircase, it's obvious that you've been here before, done this before. You can tell exactly how long you need to keep walking before you reach the doors to the Warlock's chamber. It's inevitable. With each step, you try to build up courage, but you can't muster up any feeling. You feel no fear. It just is what it is. You approach the doors to the Warlock's chamber.",
             "Choices": [
                 {
                     "Text": "Enter",
@@ -226,7 +226,70 @@
             ]
         },
         "Warlock's Chamber": {
-            "Body": "You push open the doors. "
+            "Body": "You push open the doors. The Warlock is sitting in the center of the room, mutated into something inhuman. Its torso is horribly bloated and its limbs elongated and bony. Its neck has also lengthened considerably, and its head is covered by long, silver hair, save for a dragon-like snout poking out. Even as it's squatting down, it's several times larger than you. As it notices you, you're given little time to react.",
+            "Choices": [
+                {
+                    "Text": "Dodge left",
+                    "Target": "Warlock's Chamber 2"
+                }
+            ]
+        },
+        "Warlock's Chamber 2": {
+            "Body": "You dodge to the left as it whips its arm down where you were standing, striking with enough force to shake the entire castle. You're stiff for a second, not just because you recall needing to dodge to the left, but also because you recall dying to that very strike. The Warlock readies another attack.",
+            "Choices": [
+                {
+                    "Text": "Rush in to attack",
+                    "Target": "Warlock's Chamber 3"
+                }
+            ]
+        },
+        "Warlock's Chamber 3": {
+            "Body": "Before it can strike, you rush in, conjuring a blade of energy, and slash the Warlock's leg. It screeches in pain. You back off as it swings its body around wildly. More memories return to you, allowing you to see ahead; previous fights here have shown you the path to take.",
+            "Choices": [
+                {
+                    "Text": "Continue",
+                    "Target": "Warlock's Chamber 4"
+                }
+            ]
+        },
+        "Warlock's Chamber 4": {
+            "Body": "You continue to follow your movements, all the while memories of your deaths flash before you. You remember, at the start of your task, thinking that defeating the Warlock would be near impossible, so you sought after a spell that could ensure victory. As you continue to dodge and strike, you realize that spell must have been one to send you back in time upon death, giving you a chance to try again.",
+            "Choices": [
+                {
+                    "Text": "Continue...",
+                    "Target": "Warlock's Chamber 5"
+                }
+            ]
+        },
+        "Warlock's Chamber 5": {
+            "Body": "But where were your memories? Activating a spell like that at your skill level, you may have needed an extra condition to make it work, possibly your own memories. Both you and the Warlock begin to tire, yet your continue fighting. You recall more and more deaths, hundreds, maybe even nearing a thousand. You worry that memories weren't a condition for that spell, that the amount of deaths and returns have begun to affect you.",
+            "Choices": [
+                {
+                    "Text": "...",
+                    "Target": "Warlock's Chamber 6"
+                }
+            ]
+        },
+        "Warlock's Chamber 6": {
+            "Body": "Suddenly, the memories stop. You've surpassed every previous attempt, and now you stand in the present. The Warlock is heavily wounded, and your body burns from exhaustion. You try to think of your next move, but the Warlock has already begun its next attack!",
+            "Choices": [
+                {
+                    "Text": "...",
+                    "Target": "Warlock's Chamber 7"
+                },
+                {
+                    "Text": "...",
+                    "Target": "Warlock's Chamber 7"
+                },
+                {
+                    "Text": "...",
+                    "Target": "Warlock's Chamber 7"
+                },
+                {
+                    "Text": "...",
+                    "Target": "Warlock's Chamber 7"
+                }
+            ]
         }
     }
 }
